@@ -16,5 +16,13 @@ module Pinata
       @data = data
       @next_page_token = next_page_token.nil? || next_page_token.empty? ? nil : next_page_token
     end
+
+    def empty?
+      data.empty?
+    end
+
+    def sample
+      data.sample
+    end
   end
 end
