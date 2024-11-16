@@ -22,7 +22,7 @@ module Pinata
         url: "https://#{gateway}/files/#{file_cid}",
         date: date,
         expires: expires,
-        url_method: url_method
+        method: url_method
       }
       api_post_request("files/sign", body: payload).body["data"]
     end
