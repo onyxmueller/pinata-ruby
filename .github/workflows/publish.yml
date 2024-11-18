@@ -1,0 +1,42 @@
+name: Publish
+
+# This workflow is triggered on tag pushes or manually
+on:
+  push:
+    tags:
+      - '**'
+  workflow_dispatch:
+
+jobs:
+  publish_gem:
+    name: Publish Gem
+    runs-on: ubuntu-latest
+
+    steps:
+      # Use the standard checkout action to pull down repo
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Use public setup Ruby action to set Ruby version & caching of Gems
+      - name: Setup Ruby And Gem Cache
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2.3
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
+      # Run tests
+      - name: Run Tests
+        run: |
+          bundle exec rake test
+
+      # Build & publish gem to RubyGems
+      - name: Publish to RubyGems
+        run: |
+          mkdir -p $HOME/.gem
+          touch $HOME/.gem/credentials
+          chmod 0600 $HOME/.gem/credentials
+          printf -- "---\n:rubygems_api_key: ${RUBYGEMS_API_KEY}\n" > $HOME/.gem/credentials
+          gem build *.gemspec
+          gem push *.gem
+        env:
+          RUBYGEMS_API_KEY: ${{secrets.RUBYGEMS_API_KEY}}
