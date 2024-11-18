@@ -1,6 +1,6 @@
 # Pinata
 
-[![Build Status](https://github.com/onyxmueller/pinata-ruby/actions/workflows/main.yml/badge.svg)](https://github.com/onyxmueller/pinata-ruby/actions/workflows/main.yml)
+[![Build Status](https://github.com/onyxmueller/pinata-ruby/actions/workflows/build.yml/badge.svg)](https://github.com/onyxmueller/pinata-ruby/actions/workflows/build.yml)
 
 ![header](https://docs.mypinata.cloud/ipfs/QmP9PGe3PdUqmsq8xY4sEW3qgdXx4WT9ictTWCb3qyzz3s?img-format=webp)
 
