@@ -11,7 +11,7 @@ class Minitest::Test
 
   def stub_request(path, response:, method: :get, body: {})
     Faraday::Adapter::Test::Stubs.new do |stub|
-      arguments = [method, "/v2/#{path}"]
+      arguments = [method, "/v3/#{path}"]
       arguments << body.to_json if [:post, :put, :patch].include?(method)
       stub.send(*arguments) { |env| response }
     end

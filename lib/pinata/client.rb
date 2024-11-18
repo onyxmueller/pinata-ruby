@@ -10,9 +10,12 @@ module Pinata
 
     attr_reader :pinata_jwt, :adapter
 
-    def initialize(pinata_jwt:, adapter: Faraday.default_adapter)
+    def initialize(pinata_jwt:, adapter: Faraday.default_adapter, stubs: nil)
       @pinata_jwt = pinata_jwt
       @adapter = adapter
+
+      # Test stubs for requests
+      @stubs = stubs
     end
 
     def authentication
@@ -27,7 +30,7 @@ module Pinata
       @test_connection ||= Faraday.new(url: API_BASE_URL) do |conn|
         conn.request :authorization, :Bearer, pinata_jwt
         conn.response :json, content_type: "application/json"
-        conn.adapter adapter
+        conn.adapter adapter, @stubs
       end
     end
 
@@ -37,7 +40,7 @@ module Pinata
         conn.request :multipart
         conn.request :json
         conn.response :json, content_type: "application/json"
-        conn.adapter adapter
+        conn.adapter adapter, @stubs
       end
     end
 
@@ -46,7 +49,7 @@ module Pinata
         conn.request :authorization, :Bearer, pinata_jwt
         conn.request :json
         conn.response :json, content_type: "application/json"
-        conn.adapter adapter
+        conn.adapter adapter, @stubs
       end
     end
 
