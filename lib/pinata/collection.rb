@@ -14,7 +14,7 @@ module Pinata
 
     def initialize(data:, next_page_token:)
       @data = data
-      @next_page_token = next_page_token.nil? || next_page_token.empty? ? nil : next_page_token
+      @next_page_token = (next_page_token.nil? || next_page_token.empty?) ? nil : next_page_token
     end
 
     def empty?
