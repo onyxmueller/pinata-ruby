@@ -1,0 +1,16 @@
+{
+    "data": {
+        "id": "31d8fd7e-3a24-4e71-a1ad-d5fb8c035b38",
+        "name": "IMG_1234.jpg",
+        "cid": "11111111111111111111111111111111111111111111111111111111111",
+        "size": 3416826,
+        "number_of_files": 1,
+        "mime_type": "image/jpeg",
+        "group_id": null,
+        "keyvalues": {
+            "date": "2024-10-23 09:08:36 +0000",
+            "location": "Atlanta, GA 30309, United States of America"
+        },
+        "created_at": "2024-11-17T17:23:04.306827Z"
+    }
+}

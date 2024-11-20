@@ -15,4 +15,17 @@ class FilesResourceTest < Minitest::Test
     assert_equal Pinata::File, first_file.class
     assert_equal "11111111111111111111111111111111111111111111111111111111111", first_file.cid
   end
+
+  def test_get
+    file_id = "31d8fd7e-3a24-4e71-a1ad-d5fb8c035b38"
+    stub = stub_request("files/#{file_id}", response: stub_response(fixture: "files/get"))
+    client = Pinata::Client.new(pinata_jwt: "fake", adapter: :test, stubs: stub)
+    file = client.files.get(file_id: file_id)
+
+    assert_equal Pinata::File, file.class
+    assert_equal file_id, file.id
+    assert_equal "IMG_1234.jpg", file.name
+    assert_equal "11111111111111111111111111111111111111111111111111111111111", file.cid
+    assert_equal "image/jpeg", file.mime_type
+  end
 end
