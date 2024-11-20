@@ -16,6 +16,10 @@ module Pinata
       Collection.from_response(response, key: "files", type: File)
     end
 
+    def get(file_id:)
+      File.new api_get_request("files/#{file_id}").body.dig("data")
+    end
+
     def sign(gateway:, file_cid:, expires:, date: Time.now.to_i,
       url_method: "GET")
       payload = {
