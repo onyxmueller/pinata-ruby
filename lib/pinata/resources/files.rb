@@ -34,5 +34,9 @@ module Pinata
     def update(file_id:, **attributes)
       File.new api_put_request("files/#{file_id}", body: attributes).body["data"]
     end
+
+    def delete(file_id:)
+      File.new api_delete_request("files/#{file_id}").body.dig("data")
+    end
   end
 end
