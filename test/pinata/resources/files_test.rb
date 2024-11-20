@@ -28,4 +28,11 @@ class FilesResourceTest < Minitest::Test
     assert_equal "11111111111111111111111111111111111111111111111111111111111", file.cid
     assert_equal "image/jpeg", file.mime_type
   end
+
+  def test_delete
+    file_id = "31d8fd7e-3a24-4e71-a1ad-d5fb8c035b38"
+    stub = stub_request("files/#{file_id}", method: :delete, response: stub_response(fixture: "files/delete"))
+    client = Pinata::Client.new(pinata_jwt: "fake", adapter: :test, stubs: stub)
+    assert client.files.delete(file_id: file_id)
+  end
 end

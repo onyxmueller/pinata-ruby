@@ -84,8 +84,9 @@ client.files.upload(file: "/path/to/file")
 client.files.list
 client.files.list("metadata[key]": "value")
 client.files.get(file_id: "1234567890")
-client.files.update(file_id: "thefilesid", "name": "thenameoffile")
 client.files.sign("gateway": "yourgatewaydomain", "file_cid": "thefilecid", "expires": 500000)
+client.files.update(file_id: "thefilesid", "name": "thenameoffile")
+client.files.delete(file_id: "1234567890")
 ```
 
 ## Development
