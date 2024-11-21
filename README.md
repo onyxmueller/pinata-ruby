@@ -1,6 +1,6 @@
 # Pinata
 
-[![Gem Version](https://badge.fury.io/rb/pinata@2x.png)](https://badge.fury.io/rb/pinata)
+[![Gem Version](https://badge.fury.io/rb/pinata.svg)](https://badge.fury.io/rb/pinata)
 [![Build Status](https://github.com/onyxmueller/pinata-ruby/actions/workflows/build.yml/badge.svg)](https://github.com/onyxmueller/pinata-ruby/actions/workflows/build.yml)
 
 ![header](https://docs.mypinata.cloud/ipfs/QmP9PGe3PdUqmsq8xY4sEW3qgdXx4WT9ictTWCb3qyzz3s?img-format=webp)
