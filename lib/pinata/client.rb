@@ -26,6 +26,10 @@ module Pinata
       FilesResource.new(self)
     end
 
+    def groups
+      GroupsResource.new(self)
+    end
+
     def test_connection
       @test_connection ||= Faraday.new(url: API_BASE_URL) do |conn|
         conn.request :authorization, :Bearer, pinata_jwt
