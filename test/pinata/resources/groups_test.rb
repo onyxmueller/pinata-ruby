@@ -15,6 +15,18 @@ class GroupsResourceTest < Minitest::Test
     assert_equal true, group.is_public
   end
 
+  def test_get
+    group_id = "01935c70-3b13-77dd-bd3b-000000000000"
+    stub = stub_request("files/groups/#{group_id}", response: stub_response(fixture: "groups/get"))
+    client = Pinata::Client.new(pinata_jwt: "fake", adapter: :test, stubs: stub)
+    group = client.groups.get(group_id: group_id)
+
+    assert_equal Pinata::Group, group.class
+    assert_equal group_id, group.id
+    assert_equal "Test Group", group.name
+    assert_equal true, group.is_public
+  end
+
   def test_list
     stub = stub_request("files/groups", response: stub_response(fixture: "groups/list"))
     client = Pinata::Client.new(pinata_jwt: "fake", adapter: :test, stubs: stub)
