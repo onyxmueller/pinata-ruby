@@ -73,4 +73,13 @@ class GroupsResourceTest < Minitest::Test
     assert_equal "Updated Group Name", updated_group.name
     assert_equal true, updated_group.is_public
   end
+
+  def test_delete
+    group_id = "01935c70-3b13-77dd-bd3b-000000000000"
+    stub = stub_request("files/groups/#{group_id}", method: :delete, response: stub_response(fixture: "groups/delete"))
+    client = Pinata::Client.new(pinata_jwt: "fake", adapter: :test, stubs: stub)
+    empty_group = client.groups.delete(group_id: group_id)
+
+    assert_equal Pinata::Group, empty_group.class
+  end
 end
