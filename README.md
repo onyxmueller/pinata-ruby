@@ -89,6 +89,18 @@ client.files.update(file_id: "thefilesid", "name": "thenameoffile")
 client.files.delete(file_id: "1234567890")
 ```
 
+### Groups
+
+```ruby
+client.groups.create({})
+client.groups.get(group_id: "id")
+client.groups.list
+client.groups.add_file(group_id: "id", file_id: "id")
+client.groups.remove_file(group_id: "id", file_id: "id")
+client.groups.update(group_id: "id", {})
+client.groups.delete(group_id: "id")
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

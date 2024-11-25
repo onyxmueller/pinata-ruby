@@ -16,6 +16,8 @@ module Pinata
 
   autoload :AuthenticationResource, "pinata/resources/authentication"
   autoload :FilesResource, "pinata/resources/files"
+  autoload :GroupsResource, "pinata/resources/groups"
 
   autoload :File, "pinata/objects/file"
+  autoload :Group, "pinata/objects/group"
 end

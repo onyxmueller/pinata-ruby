@@ -30,7 +30,7 @@ module Pinata
       handle_response client.api_connection.patch(url, body, headers)
     end
 
-    def api_put_request(url, body:, headers: {})
+    def api_put_request(url, body: {}, headers: {})
       handle_response client.api_connection.put(url, body, headers)
     end
 
