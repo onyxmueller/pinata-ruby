@@ -60,4 +60,17 @@ class GroupsResourceTest < Minitest::Test
 
     assert_equal Pinata::Group, empty_group.class
   end
+
+  def test_update
+    group_id = "01919ac8-a6f5-7e8e-a8a2-121212121212"
+    body = {name: "Updated Group Name", is_public: true}
+    stub = stub_request("files/groups/#{group_id}", method: :put, body: body, response: stub_response(fixture: "groups/update"))
+    client = Pinata::Client.new(pinata_jwt: "fake", adapter: :test, stubs: stub)
+    updated_group = client.groups.update(group_id: group_id, **body)
+
+    assert_equal Pinata::Group, updated_group.class
+    assert_equal group_id, updated_group.id
+    assert_equal "Updated Group Name", updated_group.name
+    assert_equal true, updated_group.is_public
+  end
 end
