@@ -7,25 +7,48 @@
 
 The Pinata Ruby library provides convenient access to the Pinata API from applications written in the Ruby language. It includes a pre-defined set of classes for API resources that initialize themselves dynamically from API responses.
 
+## Contents
+
+- [Pinata](#pinata)
+- [Contents](#contents)
+- [Documentation](#documentation)
+- [Installation](#installation)
+  - [Bundler](#bundler)
+  - [Gem Install](#gem-install)
+  - [Requirements](#requirements)
+- [Resources](#resources)
+  - [Pagination](#pagination)
+  - [Authentication](#authentication)
+  - [Files](#files)
+  - [Groups](#groups)
+- [Development](#development)
+- [Contributing](#contributing)
+- [License](#license)
+- [Code of Conduct](#code-of-conduct)
+
 ## Documentation
 
 See the [Pinata API docs](https://docs.pinata.cloud/api-reference).
 
 ## Installation
 
+### Bundler
+
 Add this line to your application's Gemfile:
 
 ```sh
-    gem 'pinata', github: "onyxmueller/pinata-ruby"
+    gem 'pinata'
 ```
 
 And then execute:
 
 ```sh
-    bundle
+    bundle install
 ```
 
-Or install it yourself as:
+### Gem Install
+
+Or install with:
 
 ```sh
     gem install pinata
