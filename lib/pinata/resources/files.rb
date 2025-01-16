@@ -2,10 +2,12 @@
 
 module Pinata
   class FilesResource < Resource
-    def upload(file:, name: nil, mime_type: nil, metadata: nil)
+    def upload(file:, group_id: nil, name: nil, mime_type: nil, metadata: nil)
+      validate(file: file)
       mime_type ||= Marcel::MimeType.for(file)
       payload = {file: Faraday::UploadIO.new(file, mime_type)}
       payload[:name] = name unless name.nil?
+      payload[:group_id] = group_id unless group_id.nil?
       payload[:keyvalues] = metadata unless metadata.nil?
       File.new upload_post_request("files", body: payload,
         headers: {"Content-Type" => "multipart/form-data"}).body["data"]
@@ -37,6 +39,10 @@ module Pinata
 
     def delete(file_id:)
       File.new api_delete_request("files/#{file_id}").body.dig("data")
+    end
+
+    def validate(file:)
+      raise ArgumentError, "`file` is required" if file.nil?
     end
   end
 end
