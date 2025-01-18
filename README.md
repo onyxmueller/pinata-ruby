@@ -1,9 +1,13 @@
 # Pinata
 
-[![Gem Version](https://badge.fury.io/rb/pinata.svg)](https://badge.fury.io/rb/pinata)
-[![Build Status](https://github.com/onyxmueller/pinata-ruby/actions/workflows/build.yml/badge.svg)](https://github.com/onyxmueller/pinata-ruby/actions/workflows/build.yml)
+![header](assets/images/pinata_for_ruby.png)<br>
 
-![header](https://docs.mypinata.cloud/ipfs/QmP9PGe3PdUqmsq8xY4sEW3qgdXx4WT9ictTWCb3qyzz3s?img-format=webp)
+<p align="center">
+  <a href="https://badge.fury.io/rb/pinata"><img alt="Gem Version" src="https://badge.fury.io/rb/pinata.svg"/></a>
+  <a href="https://github.com/onyxmueller/pinata-ruby/blob/main/LICENSE.txt"><img alt="GitHub license" src="https://img.shields.io/badge/license-MIT-blue.svg"/></a>
+  <a href="https://github.com/onyxmueller/pinata-ruby/actions/workflows/build.yml"><img alt="Build Status" src="https://github.com/onyxmueller/pinata-ruby/actions/workflows/build.yml/badge.svg"/></a> <br>
+  <a href="https://onyxmueller.net/2024/11/19/introducing-the-pinata-ruby-library/"><img alt="Onyx Mueller Blog Post" src="https://img.shields.io/badge/Onyx_Mueller-Blog_Post-blue?color=%23F8D548&link=https%3A%2F%2Fonyxmueller.net%2F2024%2F12%2F16%2Fintroducing-the-pinata-ruby-library%2F"/></a>
+</p>
 
 The Pinata Ruby library provides convenient access to the Pinata API from applications written in the Ruby language. It includes a pre-defined set of classes for API resources that initialize themselves dynamically from API responses.
 
