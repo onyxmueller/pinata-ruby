@@ -1,4 +1,4 @@
-# Pinata
+# Pinata Ruby
 
 ![header](assets/images/pinata_for_ruby.png)<br>
 
