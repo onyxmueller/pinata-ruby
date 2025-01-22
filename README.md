@@ -142,6 +142,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
+## Find this library useful? :raised_hands:
+Support it by joining __[stargazers](https://github.com/onyxmueller/pinata-ruby/stargazers)__ for this repository. :star: And __[follow me](https://github.com/onyxmueller)__ for other creations.
+
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
